@@ -61,5 +61,7 @@ public class Dialog {
 	Dialog Caction(Dialog current, int key) {
 		return commandL.get(key - 1).action();
 	}
-
+	int cmdSize(){
+		return commandL.size();
+	}
 }
