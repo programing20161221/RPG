@@ -104,4 +104,10 @@ public class Character extends BChara{
 		ability.setability(lv.getValue());
 	}
 	
+	void showCharacter(){
+		for(int i = 0; i < Main.ch.size(); i++){
+			System.out.println((i+1) + "." + Main.ch.get(i).getName());
+		}
+	}
+	
 }

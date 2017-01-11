@@ -24,7 +24,7 @@ public class deletecharacter implements Icommand{
 		}
 		
 		System.out.println("削除するキャラクターを選択してください．");
-		Main.showcharacter();
+		Main.ch.get(1).showCharacter();
 		System.out.println((Main.ch.size()+1) + ".戻る");
 		
 		key = input.getint()-1;

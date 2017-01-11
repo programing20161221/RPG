@@ -24,7 +24,7 @@ public class Enterparty implements Icommand{
 		}
 		
 		System.out.println("パーティに入れるキャラクターを選択してください．");
-		Main.showcharacter();
+		Main.ch.get(1).showCharacter();
 		System.out.println((Main.ch.size()+1) + ".戻る");
 		
 		key = input.getint()-1;

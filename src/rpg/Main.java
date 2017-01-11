@@ -68,18 +68,6 @@ public class Main {
 		dialog = title;
 	}
 
-	public static void showcharacter(){
-		for(int i = 0; i < ch.size(); i++){
-			System.out.println((i+1) + "." + ch.get(i).getName());
-		}
-	}
-
-	public static void showparty(){
-		for(int i = 0; i < party.ch.size(); i++){
-			System.out.println((i+1) + "." + party.ch.get(i).getName());
-		}
-	}
-
 	public static boolean isNumber(String s) {
 	    return Pattern.compile("^-?[0-9]+$").matcher(s).find();
 	}

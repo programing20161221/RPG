@@ -24,7 +24,7 @@ public class Deviaparty implements Icommand{
 		}
 		
 		System.out.println("パーティから外すキャラクターを選択してください．");
-		Main.showparty();
+		Main.party.showParty();
 		System.out.println((Main.party.ch.size()+1) + ".戻る");
 		
 		key = input.getint()-1;

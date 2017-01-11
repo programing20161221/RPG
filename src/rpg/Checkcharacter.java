@@ -24,9 +24,7 @@ public class Checkcharacter implements Icommand{
 		}
 		
 		System.out.println("確認するキャラクターを選択してください．");
-		for(int i = 0; i < Main.ch.size(); i++){
-			System.out.println((i+1) + "." + Main.ch.get(i).getName());
-		}
+		Main.ch.get(1).showCharacter();
 		System.out.println((Main.ch.size()+1) + ".戻る");
 		
 		key = input.getint()-1;

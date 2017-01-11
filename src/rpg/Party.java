@@ -11,5 +11,11 @@ public class Party {
 		else
 			System.out.println("上限が４人までです．");
 	}
+	
+	void showParty(){
+		for(int i = 0; i < Main.party.ch.size(); i++){
+			System.out.println((i+1) + "." + Main.party.ch.get(i).getName());
+		}
+	}
 
 }
