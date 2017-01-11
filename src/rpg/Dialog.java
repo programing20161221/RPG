@@ -13,14 +13,10 @@ public class Dialog {
 	InputStreamReader is = new InputStreamReader(System.in);
 	BufferedReader br = new BufferedReader(is);
 
-	public Text getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message.setvalue(message);
-	}
-
+	public Text getMessage() {return message;}
+	public void setMessage(String message) { this.message.setvalue(message);}
+	void setmessage(String text) { this.message.setValue(text);}
+	
 	void show() {
 		System.out.println(message.showvalue());
 		for (int i = 0; i < commandL.size(); i++) {
@@ -44,9 +40,6 @@ public class Dialog {
 		commandI.add(command);
 	}
 
-	void setmessage(String text) {
-		this.message.setValue(text);
-	}
 
 	void addcommand(Icommand cmd) {
 		this.commandI.add(cmd);

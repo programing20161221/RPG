@@ -31,25 +31,25 @@ public class Main {
 		field.setMessage("フィールドに出ました");
 		tavern.setMessage("酒場にいます");
 
-		CmdMove gamestart = new CmdMove();
-		gamestart.settext("GAMESTART");
-		gamestart.setdialog(town);
+		CmdMove gamestart = new CmdMove("GAMESTART", town);
+		// gamestart.settext("GAMESTART");
+		// gamestart.setdialog(town);
 
-		CmdMove tofield = new CmdMove();
-		tofield.settext("外へ");
-		tofield.setdialog(field);
+		CmdMove tofield = new CmdMove("外へ", field);
+		// tofield.settext("外へ");
+		// tofield.setdialog(field);
 
-		CmdMove totown = new CmdMove();
-		totown.settext("街へ戻る");
-		totown.setdialog(town);
+		CmdMove totown = new CmdMove("街へ戻る", town);
+		// totown.settext("街へ戻る");
+		// totown.setdialog(town);
 
-		CmdMove totitle = new CmdMove();
-		totitle.settext("タイトルへ戻る");
-		totitle.setdialog(title);
+		CmdMove totitle = new CmdMove("タイトルへ戻る", title);
+		// totitle.settext("タイトルへ戻る");
+		// totitle.setdialog(title);
 
-		CmdMove totavern = new CmdMove();
-		totavern.settext("酒場へ");
-		totavern.setdialog(tavern);
+		CmdMove totavern = new CmdMove("酒場へ", tavern);
+		// totavern.settext("酒場へ");
+		// totavern.setdialog(tavern);
 
 		title.addcomaand(gamestart);
 		town.addcomaand(totavern);

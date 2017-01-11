@@ -3,11 +3,16 @@ package rpg;
 public class CmdMove implements Icommand{
 	Text text = new Text();
 	Dialog dialog;
+
+	CmdMove(String text, Dialog dialog){
+		settext(text);
+		setdialog(dialog);
+	}
 	
 	void set(String text, Dialog dialog){
 		settext(text);
 		setdialog(dialog);
-	}	
+	}
 	
 	void settext(String message){
 		text.setvalue(message);
