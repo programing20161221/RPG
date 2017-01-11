@@ -29,12 +29,12 @@ public class Fight implements Icommand{
 	public String showname(){return text.showvalue();}
 	public Dialog action(){
 		// player turn
-		System.out.println("こちらの攻撃!"+ (monster.getHp().get_Value() - hero.getAttack().get_Value())+"のダメージ!!を与えた!!");
-		monster.setHp(monster.getHp().get_Value() - hero.getAttack().get_Value());
+		System.out.println("こちらの攻撃!"+ (monster.getHp().getValue() - hero.getAttack().getValue())+"のダメージ!!を与えた!!");
+		monster.setHp(monster.getHp().getValue() - hero.getAttack().getValue());
 
 		// monster turn
-		System.out.println("敵からの攻撃!"+ (hero.getHp().get_Value() - monster.getAttack().get_Value())+"のダメージを食らった!!");
-		hero.setHp(hero.getHp().get_Value() - monster.getAttack().get_Value());
+		System.out.println("敵からの攻撃!"+ (hero.getHp().getValue() - monster.getAttack().getValue())+"のダメージを食らった!!");
+		hero.setHp(hero.getHp().getValue() - monster.getAttack().getValue());
 		return dialog;
 	}
 

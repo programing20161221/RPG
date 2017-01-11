@@ -5,7 +5,7 @@ public class Parameter {
 	private int value;
 	private int max;
 	private int min;
-	
+
 	public Parameter() {
 		// TODO Auto-generated constructor stub
 		this.text = new Text();
@@ -13,73 +13,62 @@ public class Parameter {
 		this.max = 10;
 		this.min = 0;
 	}
-	
-	String gettext(){
+
+	String gettext() {
 		return text.getvalue();
 	}
-	
-	int getmax(){
+
+	int getmax() {
 		return this.max;
 	}
-	
-	int getmin(){
+
+	int getmin() {
 		return this.min;
 	}
-	
-	int getvalue(){
+
+	int getValue() {
 		return value;
 	}
-	
-	  int get_Value(){ return value;}
-	
-	void setrange(int max, int min){
+
+
+	void setrange(int max, int min) {
 		this.max = max;
 		this.min = min;
 	}
-	
-	void setvalue(int value){
-		if(value > max)
+
+	void setValue(int value) {
+		if (value > max)
 			this.value = max;
-		else if(value < min)
+		else if (value < min)
 			this.value = min;
 		else
 			this.value = value;
 	}
-	
-	void setValue(int value){
-		if(value > max)
-			this.value = max;
-		else if(value < min)
-			this.value = min;
-		else
-			this.value = value;
-	}
-	
-	void settext(String value){
+
+	void settext(String value) {
 		text.setvalue(value);
 	}
-	
-	int incvalue(int v){
+
+	int incvalue(int v) {
 		this.value += v;
-		if(this.value > max)
+		if (this.value > max)
 			return this.value = max;
-		else if(this.value < min)
+		else if (this.value < min)
 			return this.value = min;
 		else
 			return this.value;
 	}
-	
-	String showvalue(){
+
+	String showvalue() {
 		return String.valueOf(this.value);
 	}
-	
-	String showvalue(int digit){
+
+	String showvalue(int digit) {
 		String str = String.valueOf(this.value);
-		
-		if(str.length() > digit){
+
+		if (str.length() > digit) {
 			return str.substring((str.length() - digit), str.length());
-		}
-		else{
+		} else {
 			String format = "%" + String.valueOf(digit) + "s";
 			return String.format(format, str);
 		}

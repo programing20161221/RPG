@@ -24,32 +24,32 @@ public class Ability {
 	}
 
 	public void setability(int lv) {
-		this.strength.setvalue(dice.maxcast(10, lv, 3));
-		this.intelligence.setvalue(dice.maxcast(10, lv, 3));
-		this.vitality.setvalue(dice.maxcast(10, lv, 3));
-		this.agility.setvalue(dice.maxcast(10, lv, 3));
-		this.luck.setvalue(dice.maxcast(10, lv, 3));
+		this.strength.setValue(dice.maxcast(10, lv, 3));
+		this.intelligence.setValue(dice.maxcast(10, lv, 3));
+		this.vitality.setValue(dice.maxcast(10, lv, 3));
+		this.agility.setValue(dice.maxcast(10, lv, 3));
+		this.luck.setValue(dice.maxcast(10, lv, 3));
 
 	}
 
 	int getstrength(){
-		return strength.getvalue();
+		return strength.getValue();
 	}
 
 	int getintelligence(){
-		return intelligence.getvalue();
+		return intelligence.getValue();
 	}
 
 	int getvitality(){
-		return vitality.getvalue();
+		return vitality.getValue();
 	}
 
 	int getagility(){
-		return agility.getvalue();
+		return agility.getValue();
 	}
 
 	int getluck(){
-		return luck.getvalue();
+		return luck.getValue();
 	}
 
 }

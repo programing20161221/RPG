@@ -4,6 +4,8 @@ public class CmdMove implements Icommand{
 	Text text = new Text();
 	Dialog dialog;
 
+	CmdMove(){;}
+	
 	CmdMove(String text, Dialog dialog){
 		settext(text);
 		setdialog(dialog);

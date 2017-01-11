@@ -51,12 +51,12 @@ public class Main {
 		// totavern.settext("酒場へ");
 		// totavern.setdialog(tavern);
 
-		title.addcomaand(gamestart);
-		town.addcomaand(totavern);
-		town.addcomaand(tofield);
-		town.addcomaand(totitle);
-		tavern.addcomaand(totown);
-		field.addcomaand(totown);
+		title.addcommand(gamestart);
+		town.addcommand(totavern);
+		town.addcommand(tofield);
+		town.addcommand(totitle);
+		tavern.addcommand(totown);
+		field.addcommand(totown);
 
 		tavern.addcommandI(newchara);
 		tavern.addcommandI(delchara);

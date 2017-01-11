@@ -15,7 +15,6 @@ public class Dialog {
 
 	public Text getMessage() {return message;}
 	public void setMessage(String message) { this.message.setvalue(message);}
-	void setmessage(String text) { this.message.setValue(text);}
 	
 	void show() {
 		System.out.println(message.showvalue());
@@ -32,7 +31,7 @@ public class Dialog {
 		return commandL.get(key).action();
 	}
 
-	void addcomaand(CmdMove command) {
+	void addcommand(CmdMove command) {
 		commandL.add(command);
 	}
 
@@ -46,7 +45,7 @@ public class Dialog {
 	}
 
 	void set(String text, Icommand... cmd) {
-		setmessage(text);
+		setMessage(text);
 		for (Icommand c : cmd)
 			addcommand(c);
 	}

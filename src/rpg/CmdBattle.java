@@ -50,7 +50,7 @@ public class CmdBattle implements Icommand{
 			if(key == 3){
 				break;
 			}
-			dialog.setmessage("つぎに何をする?");
+			dialog.setMessage("つぎに何をする?");
 			dialog.Caction(dialog, key);
 		}
 		return null;

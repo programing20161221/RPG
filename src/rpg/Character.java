@@ -47,7 +47,7 @@ public class Character extends BChara{
 	}
 
 	public void setName() throws IOException {
-		this.name.setvalue(input.getstring());
+		this.name.setValue(input.getstring());
 	}
 	
 	public void setJob(Job job){
@@ -55,15 +55,15 @@ public class Character extends BChara{
 	}
 	
 	int mhp(){
-		return (int)((lv.getvalue() + ability.getstrength()) * job.getmhptate());
+		return (int)((lv.getValue() + ability.getstrength()) * job.getmhptate());
 	}
 	
 	int mmp(){
-		return (int)(lv.getvalue() + ability.getintelligence() * job.getmhptate());
+		return (int)(lv.getValue() + ability.getintelligence() * job.getmhptate());
 	}
 	
 	int incap(){
-		return (int)(lv.getvalue() + ability.getagility() * job.getincaprate());
+		return (int)(lv.getValue() + ability.getagility() * job.getincaprate());
 	}
 	
 	int getstrength(){
@@ -80,28 +80,28 @@ public class Character extends BChara{
 	void getstatus(){
 		System.out.println("Name :" + name.getvalue());
 		System.out.println("Job  :" + job.getname().getvalue());
-		System.out.println("Level:" + lv.getvalue());
+		System.out.println("Level:" + lv.getValue());
 	}
 	
 	void levelup(){
-		lv.setvalue(lv.getvalue() + 1);
+		lv.setValue(lv.getValue() + 1);
 		
 		hp.setrange(mhp(), 0);
 		mp.setrange(mmp(), 0);
 		ap.setrange(incap(), 0);
 		
-		hp.setvalue(hp.getmax());
-		mp.setvalue(mp.getmax());
-		ap.setvalue(ap.getmax());
+		hp.setValue(hp.getmax());
+		mp.setValue(mp.getmax());
+		ap.setValue(ap.getmax());
 	}
 	
 	void initstatus(){		
-		lv.setvalue(1);
+		lv.setValue(1);
 		hp.setrange(mhp(), 0);
 		mp.setrange(mmp(), 0);
 		ap.setrange(incap(), 0);
 		
-		ability.setability(lv.getvalue());
+		ability.setability(lv.getValue());
 	}
 	
 }

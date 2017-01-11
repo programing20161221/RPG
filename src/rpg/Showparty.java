@@ -20,7 +20,9 @@ public class Showparty implements Icommand{
 		}
 		
 		System.out.println("現在のパーティメンバー：");
-		Main.showparty();
+		for(int i = 0; i < Main.party.ch.size(); i++){
+			System.out.println((i+1) + "." + Main.party.ch.get(i).getName());
+		}
 		return null;
 	}
 
