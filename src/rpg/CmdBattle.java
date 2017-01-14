@@ -1,4 +1,5 @@
 package rpg;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class CmdBattle implements Icommand{
@@ -30,15 +31,15 @@ public class CmdBattle implements Icommand{
 		setdialog(dialog);
 	}
 
-	void settext(String text){ this.Choice_message.setValue(text);}
+	void settext(String text){ this.Choice_message.setvalue(text);}
 	void setdialog(Dialog dialog){ this.dialog = dialog;}
 	Dialog getDialog(){ return this.dialog;}
 
-	public String showname(){
+	public String show(){
 		return Choice_message.showvalue();
 	}
 
-	public Dialog action(){
+	public Dialog action() throws IOException{
 		while(true){
 			dialog.showmessage(); //説明文
 			dialog.show(); //コマンド一覧

@@ -9,9 +9,9 @@ public class UseItem implements Icommand{
 		this.Choice_message = new Text();
 	}
 
-	void settext(String text){ this.Choice_message.setValue(text);}
+	void settext(String text){ this.Choice_message.setvalue(text);}
 
-	public String showname(){
+	public String show(){
 		return Choice_message.showvalue();
 	}
 	public Dialog action(){

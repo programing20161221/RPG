@@ -33,11 +33,11 @@ public class Character extends BChara{
 		this.battledialog = new Dialog();
 		this.input = new Input();
 		this.job = new Job();
-		
+
 		lv.setrange(100, 1);
 	}
-	
-	
+
+
 	public Character getParty() {
 		return party;
 	}
@@ -47,25 +47,25 @@ public class Character extends BChara{
 	}
 
 	public void setName() throws IOException {
-		this.name.setValue(input.getstring());
+		this.name.setvalue(input.getstring());
 	}
-	
+
 	public void setJob(Job job){
 		this.job = job;
 	}
-	
+
 	int mhp(){
 		return (int)((lv.getValue() + ability.getstrength()) * job.getmhptate());
 	}
-	
+
 	int mmp(){
 		return (int)(lv.getValue() + ability.getintelligence() * job.getmhptate());
 	}
-	
+
 	int incap(){
 		return (int)(lv.getValue() + ability.getagility() * job.getincaprate());
 	}
-	
+
 	int getstrength(){
 		return ability.getstrength(); //+ weapon.getstrength + armor.getstrength + shield.getstrength;
 	}
@@ -82,32 +82,32 @@ public class Character extends BChara{
 		System.out.println("Job  :" + job.getname().getvalue());
 		System.out.println("Level:" + lv.getValue());
 	}
-	
+
 	void levelup(){
 		lv.setValue(lv.getValue() + 1);
-		
+
 		hp.setrange(mhp(), 0);
 		mp.setrange(mmp(), 0);
 		ap.setrange(incap(), 0);
-		
+
 		hp.setValue(hp.getmax());
 		mp.setValue(mp.getmax());
 		ap.setValue(ap.getmax());
 	}
-	
-	void initstatus(){		
+
+	void initstatus(){
 		lv.setValue(1);
 		hp.setrange(mhp(), 0);
 		mp.setrange(mmp(), 0);
 		ap.setrange(incap(), 0);
-		
+
 		ability.setability(lv.getValue());
 	}
-	
+
 	void showCharacter(){
 		for(int i = 0; i < Main.ch.size(); i++){
 			System.out.println((i+1) + "." + Main.ch.get(i).getName());
 		}
 	}
-	
+
 }

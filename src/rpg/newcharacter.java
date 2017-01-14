@@ -6,9 +6,9 @@ public class newcharacter implements Icommand{
 	Text name = new Text();
 	Input input = new Input();
 	Dialog returndialog  = new Dialog();
-	
+
 	@Override
-	public String showname() {
+	public String show() {
 		// TODO Auto-generated method stub
 		name.setvalue("新規キャラクターの作成");
 		return name.getvalue();
@@ -25,9 +25,9 @@ public class newcharacter implements Icommand{
 		System.out.println("2.野伏");
 		System.out.println("3.僧侶");
 		System.out.println("4.魔法使い");
-		
+
 		int key = input.getint();
-		
+
 		if(key == 1){
 			newchara.setJob(new Fighter());
 		}else if(key == 2){
@@ -37,11 +37,11 @@ public class newcharacter implements Icommand{
 		}else if(key == 4){
 			newchara.setJob(new Mage());
 		}
-		
+
 		Main.ch.add(newchara);
 		return null;
 	}
-	
+
 	void returndialog(Dialog dialog){
 		this.returndialog = dialog;
 	}

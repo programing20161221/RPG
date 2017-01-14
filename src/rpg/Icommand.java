@@ -3,6 +3,6 @@ package rpg;
 import java.io.IOException;
 
 public interface Icommand{
-	String showname();
+	String show();
 	Dialog action() throws IOException;
 }

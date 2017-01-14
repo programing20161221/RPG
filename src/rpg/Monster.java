@@ -32,7 +32,7 @@ public class Monster extends BChara{
 		//連想配列にしたいね HashMApとかいうの使う？
 		// あとはファイル形式をJSON形式にしてもいいかもね．
 		try {
-			File file = new File("C:\\Users\\万寿穂\\Desktop\\monster.csv");
+			File file = new File("C:\\Users\\Desktop\\monster.csv");
 			FileInputStream input = new FileInputStream(file);
 			InputStreamReader stream = new InputStreamReader(input,"SJIS");
 			BufferedReader buffer = new BufferedReader(stream);

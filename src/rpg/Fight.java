@@ -15,7 +15,7 @@ public class Fight implements Icommand{
 		this.hero = new Character();
 	}
 
-	void settext(String text){ this.text.setValue(text);}
+	void settext(String text){ this.text.setvalue(text);}
 
 	public Character getHero() {return hero;}
 	public void setHero(Character hero) {this.hero = hero;}
@@ -26,7 +26,7 @@ public class Fight implements Icommand{
 	public Dialog getDialog() {return dialog;}
 	public void setDialog(Dialog dialog) {this.dialog = dialog;}
 
-	public String showname(){return text.showvalue();}
+	public String show(){return text.showvalue();}
 	public Dialog action(){
 		// player turn
 		System.out.println("こちらの攻撃!"+ (monster.getHp().getValue() - hero.getAttack().getValue())+"のダメージ!!を与えた!!");

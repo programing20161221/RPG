@@ -7,7 +7,7 @@ public class Showparty implements Icommand{
 	Input input = new Input();
 
 	@Override
-	public String showname() {
+	public String show() {
 		name.setvalue("パーティを確認する．");
 		return name.getvalue();
 	}
@@ -18,7 +18,7 @@ public class Showparty implements Icommand{
 			System.out.println("キャラクターはいません．");
 			return null;
 		}
-		
+
 		System.out.println("現在のパーティメンバー：");
 		Main.party.showParty();
 		return null;

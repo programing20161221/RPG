@@ -10,7 +10,7 @@ public class BChara{
 	private Parameter attack;
 	private Parameter defense;
 
-	public void setName(String text){this.name.setValue(text);}
+	public void setName(String text){this.name.setvalue(text);}
 	public String getName(){ return name.getValue(); }
 
 	public Parameter getMaxhp() {return maxhp;}

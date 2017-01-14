@@ -17,6 +17,8 @@ public class Main {
 		Dialog field = new Dialog();
 		Dialog tavern = new Dialog();
 
+		CmdBattle battle  = new CmdBattle();
+
 		tmp = new Dialog();
 
 		newcharacter newchara = new newcharacter();
@@ -26,44 +28,36 @@ public class Main {
 		Deviaparty deviateparty = new Deviaparty();
 		Checkcharacter checkcharacter = new Checkcharacter();
 
-		title.setMessage("タイトル");
-		town.setMessage("街にいます");
-		field.setMessage("フィールドに出ました");
-		tavern.setMessage("酒場にいます");
+
+
 
 		CmdMove gamestart = new CmdMove("GAMESTART", town);
-		// gamestart.settext("GAMESTART");
-		// gamestart.setdialog(town);
-
 		CmdMove tofield = new CmdMove("外へ", field);
-		// tofield.settext("外へ");
-		// tofield.setdialog(field);
-
 		CmdMove totown = new CmdMove("街へ戻る", town);
-		// totown.settext("街へ戻る");
-		// totown.setdialog(town);
-
 		CmdMove totitle = new CmdMove("タイトルへ戻る", title);
-		// totitle.settext("タイトルへ戻る");
-		// totitle.setdialog(title);
-
 		CmdMove totavern = new CmdMove("酒場へ", tavern);
-		// totavern.settext("酒場へ");
-		// totavern.setdialog(tavern);
 
-		title.addcommand(gamestart);
-		town.addcommand(totavern);
-		town.addcommand(tofield);
-		town.addcommand(totitle);
+		title.set("タイトル", gamestart);
+		town.set("街にいます", totavern, tofield, totitle);
+//		town.setMessage("街にいます");
+		field.setMessage("フィールドに出ました");
+		tavern.setMessage("酒場にいます");
+//
+//		title.addcommand(gamestart);
+//		town.addcommand(totavern);
+//		town.addcommand(tofield);
+//		town.addcommand(totitle);
 		tavern.addcommand(totown);
 		field.addcommand(totown);
 
-		tavern.addcommandI(newchara);
-		tavern.addcommandI(delchara);
-		tavern.addcommandI(enterparty);
-		tavern.addcommandI(showparty);
-		tavern.addcommandI(deviateparty);
-		tavern.addcommandI(checkcharacter);
+		field.addcommand(battle);
+
+		tavern.addcommand(newchara);
+		tavern.addcommand(delchara);
+		tavern.addcommand(enterparty);
+		tavern.addcommand(showparty);
+		tavern.addcommand(deviateparty);
+		tavern.addcommand(checkcharacter);
 
 		dialog = title;
 	}
@@ -97,7 +91,7 @@ public class Main {
 		init();
 
 		while (true) {
-//			dialog.showmessage(); //説明文
+			dialog.showmessage(); //説明文
 			dialog.show(); //コマンド一覧
 
 			System.out.println(" > ");
