@@ -28,6 +28,7 @@ public class Enterparty implements Icommand{
 		System.out.println((Main.ch.size()+1) + ".戻る");
 
 		key = input.getInt()-1;
+
 		if(key >= 0 && key < Main.ch.size()){
 			Main.party.ch.add(Main.ch.get(key));
 		}

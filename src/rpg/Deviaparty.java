@@ -28,6 +28,7 @@ public class Deviaparty implements Icommand{
 		System.out.println((Main.party.ch.size()+1) + ".戻る");
 
 		key = input.getInt()-1;
+
 		if(key >= 0 && key < Main.party.ch.size())
 			Main.party.ch.remove(key);
 		return null;

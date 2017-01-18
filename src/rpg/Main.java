@@ -28,7 +28,6 @@ public class Main {
 		Deviaparty deviateparty = new Deviaparty();
 		Checkcharacter checkcharacter = new Checkcharacter();
 
-
 		CmdMove gamestart = new CmdMove("GAMESTART", town);
 		CmdMove tofield = new CmdMove("外へ", field);
 		CmdMove totown = new CmdMove("街へ戻る", town);
@@ -113,7 +112,7 @@ public class Main {
 		party.addparty(chTest[1]);
 		party.addparty(chTest[2]);
 		party.addparty(chTest[3]);
-		
+
 		init();
 
 		while (true) {

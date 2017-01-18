@@ -28,6 +28,7 @@ public class deletecharacter implements Icommand{
 		System.out.println((Main.ch.size()+1) + ".戻る");
 
 		key = input.getInt()-1;
+
 		if(key >= 0 && key < Main.ch.size()){
 			Main.ch.remove(key);
 		}
