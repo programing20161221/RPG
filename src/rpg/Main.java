@@ -94,6 +94,8 @@ public class Main {
 
 		chTest[0] = new Character();
 		chTest[0].setName("ch1");
+		chTest[0].setMaxhp(100);
+		chTest[0].setHp(50);
 		chTest[0].setJob(mage);
 		ch.add(chTest[0]);
 		chTest[1] = new Character();

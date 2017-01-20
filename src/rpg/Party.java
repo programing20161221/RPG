@@ -28,4 +28,23 @@ public class Party {
 		return "*******";
 	}
 
+	String printPartystatus(){
+		String p = "";
+		p += "::::::::::::::::::::::::::::::::::::::::::::\n";
+		for(int i = 0; i < this.sizeParty();i++){
+			p += ch.get(i).getName()+": "+"("+ ch.get(i).getHp()+"/"+ ch.get(i).getMaxhp()+")";
+			for(int hp = 0; hp < ch.get(i).getMaxhp() ;hp+=10){
+//				String h="";
+				if (hp >= ch.get(i).getHp())
+					p += "-";
+				else
+					p += "*";
+			}
+			p += "\n";
+//			p += h;
+		}
+		p += "::::::::::::::::::::::::::::::::::::::::::::\n";
+		return p;
+	}
+
 }

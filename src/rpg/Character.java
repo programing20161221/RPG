@@ -95,9 +95,9 @@ public class Character extends BChara{
 		mp.setrange(mmp(), 0);
 		ap.setrange(incap(), 0);
 
-		hp.setValue(hp.getmax());
-		mp.setValue(mp.getmax());
-		ap.setValue(ap.getmax());
+		hp.setValue(hp.getMax());
+		mp.setValue(mp.getMax());
+		ap.setValue(ap.getMax());
 	}
 
 	void initstatus(){

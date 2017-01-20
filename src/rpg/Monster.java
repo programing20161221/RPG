@@ -1,14 +1,5 @@
 package rpg;
 
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-
 public class Monster extends BChara{
 	private Parameter EXP;
 	private String[] columns;
@@ -19,14 +10,26 @@ public class Monster extends BChara{
 	public void setEXP(int exp) {this.EXP.setValue(exp);}
 
 	Monster(){
-		setMaxhp(10);
-		setName("Monster");
+		setMaxhp(100);
+		setHp(100);
+		setName("test");
 		setAttack(2);
 		setDefense(2);
 		EXP = new Parameter();
 		setEXP(100);
 	}
 
+	Monster(String str){
+		setMaxhp(100);
+		setHp(100);
+		setName(str);
+		setAttack(2);
+		setDefense(2);
+		EXP = new Parameter();
+		setEXP(100);
+	}
+
+/*
 	void readMonster (){
 
 		//連想配列にしたいね HashMApとかいうの使う？
@@ -66,4 +69,5 @@ public class Monster extends BChara{
 		}
 
 	}
+	*/
 }

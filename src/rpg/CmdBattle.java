@@ -12,22 +12,27 @@ public class CmdBattle implements Icommand{
 	private CmdMove escape;
 
 	private Party party;
+	private Monster m;
+
 
 	CmdBattle(Party p){
 		this.Choice_message = new Text();
 		this.dialog = new Dialog();
 
+		this.m = new Monster("スライム");
+//		m.setName("スライム");
+//		m.setHp(10);
 		this.party = p;
 
 		settext("敵とたたかう");
 
-		this.fight = new Fight();
+		this.fight = new Fight(m);
 		fight.settext("たたかう");
 		this.item = new UseItem();
 		item.settext("アイテムを使う");
 		this.escape = new CmdMove();
 		escape.set("にげる", null);
-		dialog.set("Monster"+"があらわれた!!", fight, item, escape);
+		dialog.set(m.getName()+"("+m.getHp()+"/"+m.getMaxhp()+")"+"があらわれた!!", fight, item, escape);
 	}
 
 	void set(String message, Dialog dialog){
@@ -44,12 +49,15 @@ public class CmdBattle implements Icommand{
 	}
 
 	public Dialog action() throws IOException{
-		while(true){
+		dialog.showmessage();
+		System.out.println("");
 
+		while(true){
+			System.out.println(party.printPartystatus());
 			for(int i=1; i<= party.sizeParty() ;i++){
 //				Main.party.ch.get(i).getName()
 				dialog.setMessage(Main.party.ch.get(i-1).getName()+"は何をする?");
-				System.out.println("i:"+i);
+//				System.out.println("i:"+i);
 				dialog.showmessage(); //説明文
 				dialog.show(); //コマンド一覧
 
@@ -61,7 +69,7 @@ public class CmdBattle implements Icommand{
 					break;
 				}
 
-//				dialog.Caction(dialog, key);//あらかじめメンバーの行動を決めて，最後に実行
+				dialog.Caction(dialog, key);//あらかじめメンバーの行動を決めて，最後に実行
 			}
 
 		}

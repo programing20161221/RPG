@@ -18,12 +18,21 @@ public class Parameter {
 		return text.getvalue();
 	}
 
-	int getmax() {
+	int getMax() {
 		return this.max;
 	}
 
-	int getmin() {
+
+	void setMax(int m) {
+		this.max = m;
+	}
+
+	int getMin() {
 		return this.min;
+	}
+
+	void setMin(int m) {
+		this.min = m;
 	}
 
 	int getValue() {
