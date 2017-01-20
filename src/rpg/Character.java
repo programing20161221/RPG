@@ -16,6 +16,8 @@ public class Character extends BChara{
 	private Input input;
 	private Character party;
 
+	private Bcommand Bcom;
+
 	public Character() {
 		// TODO Auto-generated constructor stub
 		this.lv = new Parameter();
@@ -33,6 +35,14 @@ public class Character extends BChara{
 		this.job = new Job();
 
 		lv.setrange(100, 1);
+	}
+
+	public void setBcommand(Bcommand i){
+		this.Bcom = i;
+	}
+
+	public Bcommand getBcommand(){
+		return this.Bcom;
 	}
 
 

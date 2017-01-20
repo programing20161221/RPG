@@ -1,24 +1,24 @@
 package rpg;
 
 
-public class Fight implements Icommand{
+public class Fight implements Bcommand{
 	private Text text;
 	private Dialog dialog;
 
-	private Character hero;
+	private Party party;
 	private Monster monster;
 
-	Fight(Monster m){
+	Fight(Monster m, Party p){
 		this.text = new Text();
 		this.dialog = new Dialog();
 		this.monster = m;
-		this.hero = new Character();
+		this.party = p;
 	}
 
 	void settext(String text){ this.text.setvalue(text);}
 
-	public Character getHero() {return hero;}
-	public void setHero(Character hero) {this.hero = hero;}
+//	public Character getHero() {return hero;}
+//	public void setHero(Character hero) {this.hero = hero;}
 
 	public Monster getMonster() {return monster;}
 	public void setMonster(Monster monster) {this.monster = monster;}
@@ -27,20 +27,21 @@ public class Fight implements Icommand{
 	public void setDialog(Dialog dialog) {this.dialog = dialog;}
 
 	public String show(){return text.getvalue();}
-	public Dialog action(){
+	public Dialog action(Character c){
 		// player turn
-		System.out.println("hp:"+monster.getHp() );
-		System.out.println("attack:"+hero.getAttack());
-		System.out.println("こちらの攻撃!"+ (monster.getHp() - hero.getAttack())+"のダメージ!!を与えた!!");
-		monster.setHp(monster.getHp() - hero.getAttack());
-//		monster.setHp(50);
+//		for(int i=1; i<= party.sizeParty() ;i++){
 
+//		}
+//		System.out.println("fight");
+		System.out.println("こちらの攻撃!"+ c.getAttack()+"のダメージ!!を与えた!!");
+		monster.setHp(monster.getHp() - c.getAttack());
 
 		// monster turn
-		System.out.println("敵からの攻撃!"+ (hero.getHp() - monster.getAttack())+"のダメージを食らった!!");
-		hero.setHp(hero.getHp()- monster.getAttack());
-
-		System.out.println(monster.getName()+"("+monster.getHp()+"/"+monster.getMaxhp()+")");
+//		Character ch = party.RandomMember();
+//		System.out.println("敵からの攻撃!\n"+ch.getName()+"が"+ monster.getAttack()+"のダメージを食らった!!");
+//		ch.setHp(ch.getHp()- monster.getAttack());
+//		System.out.println(ch.getName()+": ("+ch.getHp()+"/"+ch.getMaxhp()+")\n");
+//		System.out.println(monster.getName()+"("+monster.getHp()+"/"+monster.getMaxhp()+")");
 		return dialog;
 	}
 

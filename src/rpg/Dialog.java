@@ -9,9 +9,12 @@ public class Dialog {
 	Text message;
 //	ArrayList<CmdMove> commandL = new ArrayList<CmdMove>();
 	ArrayList<Icommand> commandI;
+	ArrayList<Bcommand> commandB;
+
 	Dialog(){
 		  this.message = new Text();
 		  this.commandI = new ArrayList<Icommand>();
+		  this.commandB = new ArrayList<Bcommand>();
 	  }
 	// 外部入力用の変数
 	InputStreamReader is = new InputStreamReader(System.in);
@@ -24,6 +27,13 @@ public class Dialog {
 //		System.out.println(message.showvalue());
 		for (int i = 0; i < commandI.size(); i++) {
 			System.out.println((i + 1) + "."+ commandI.get(i).show());
+		}
+	}
+
+	void Bshow() {
+//		System.out.println(message.showvalue());
+		for (int i = 0; i < commandB.size(); i++) {
+			System.out.println((i + 1) + "."+ commandB.get(i).show());
 		}
 	}
 
@@ -48,9 +58,19 @@ public class Dialog {
 		this.commandI.add(cmd);
 	}
 
+	void addcommand(Bcommand cmd) {
+		this.commandB.add(cmd);
+	}
+
 	void set(String text, Icommand... cmd) {
 		setMessage(text);
 		for (Icommand c : cmd)
+			addcommand(c);
+	}
+
+	void set(String text, Bcommand... cmd) {
+		setMessage(text);
+		for (Bcommand c : cmd)
 			addcommand(c);
 	}
 

@@ -36,14 +36,9 @@ public class Main {
 
 		title.set("タイトル", gamestart);
 		town.set("街にいます", totavern, tofield, totitle);
-//		town.setMessage("街にいます");
 		field.setMessage("フィールドに出ました");
 		tavern.setMessage("酒場にいます");
-//
-//		title.addcommand(gamestart);
-//		town.addcommand(totavern);
-//		town.addcommand(tofield);
-//		town.addcommand(totitle);
+
 		tavern.addcommand(totown);
 		field.addcommand(totown);
 
@@ -79,11 +74,6 @@ public class Main {
 
 
 	public static void main(String[] args) throws IOException {
-//		 TODO Auto-generated method stub
-//		InputStreamReader is = new InputStreamReader(System.in);
-//		BufferedReader br = new BufferedReader(is);
-//		Input input = new Input();
-//		int key;
 
 		/*initialize Member*/
 		Mage mage = new Mage();
@@ -122,7 +112,7 @@ public class Main {
 			dialog.showmessage(); //説明文
 			dialog.show(); //コマンド一覧
 
-			System.out.println(" > ");
+			System.out.print(" > :");
 
 			Scanner scan = new Scanner(System.in);
 			int key;
@@ -130,22 +120,6 @@ public class Main {
 				continue;
 			tmp = dialog.Caction(dialog, key);
 			dialog = (tmp != null)? tmp :dialog; //実行 → 次の状態
-			/*
-			dialog.show();
-			dialog = dialog.input(Integer.parseInt(br.readLine()) - 1);
-			while (dialog.commandI.size() != 0) {
-				System.out.println("何をしますか");
-				for(int i = 0; i < dialog.commandI.size(); i++){
-					System.out.println((i+1) + "." + dialog.commandI.get(i).showname());
-				}
-				System.out.println(dialog.commandI.size() + 1 + ".ここを出る");
-				if (dialog.commandI.size() != (key = input.getint()-1)){
-					dialog.commandI.get(key).action();
-				}
-				else
-					break;
-			}
-			*/
 		}
 	}
 

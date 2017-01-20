@@ -1,6 +1,7 @@
 package rpg;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Party {
 	ArrayList<Character> ch = new ArrayList<Character>();
@@ -22,7 +23,21 @@ public class Party {
 		return this.ch.size();
 	}
 
-	String getMember(int key){
+	Character RandomMember(){
+        Random rnd = new Random();
+        int ran = rnd.nextInt(4);
+        return ch.get(ran);
+	}
+
+	Character getMember(int key){
+		return ch.get(key);
+	}
+
+//	Icommand getIcommand(int key){
+//		return ch.get(key).getIcommand();
+//	}
+
+	String getName(int key){
 		if(sizeParty() > key)
 			return ch.get(key).getName();
 		return "*******";

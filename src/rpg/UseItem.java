@@ -1,7 +1,7 @@
 package rpg;
 
 
-public class UseItem implements Icommand{
+public class UseItem implements Bcommand{
 
 	private Text Choice_message;
 
@@ -14,7 +14,8 @@ public class UseItem implements Icommand{
 	public String show(){
 		return Choice_message.getvalue();
 	}
-	public Dialog action(){
+	public Dialog action(Character c){
+		System.out.println("item");
 		return null;
 	}
 
