@@ -17,7 +17,7 @@ public class Main {
 		Dialog field = new Dialog();
 		Dialog tavern = new Dialog();
 
-		CmdBattle battle  = new CmdBattle();
+		CmdBattle battle  = new CmdBattle(party);
 
 		tmp = new Dialog();
 
@@ -84,13 +84,14 @@ public class Main {
 //		BufferedReader br = new BufferedReader(is);
 //		Input input = new Input();
 //		int key;
-		
+
+		/*initialize Member*/
 		Mage mage = new Mage();
 		Priest priest = new Priest();
 		Fighter fighter = new Fighter();
 		Ranger ranger = new Ranger();
 		Character chTest[] = new Character[4];
-		
+
 		chTest[0] = new Character();
 		chTest[0].setName("ch1");
 		chTest[0].setJob(mage);
@@ -107,7 +108,7 @@ public class Main {
 		chTest[3].setName("ch4");
 		chTest[3].setJob(ranger);
 		ch.add(chTest[3]);
-		
+
 		party.addparty(chTest[0]);
 		party.addparty(chTest[1]);
 		party.addparty(chTest[2]);

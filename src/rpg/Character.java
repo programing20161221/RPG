@@ -1,10 +1,8 @@
 package rpg;
 
-import java.io.IOException;
-
 public class Character extends BChara{
 	private Parameter lv;
-	private Text name;
+//	private Text name;
 	private Job job;
 	private Ability ability;
 	private Equip weapon;
@@ -21,7 +19,7 @@ public class Character extends BChara{
 	public Character() {
 		// TODO Auto-generated constructor stub
 		this.lv = new Parameter();
-		this.name = new Text();
+//		this.name = new Text();
 		this.ability = new Ability();
 		this.weapon = new Equip();
 		this.armor = new Equip();
@@ -46,9 +44,9 @@ public class Character extends BChara{
 		this.party = party;
 	}
 
-	public void setName() throws IOException {
-		this.name.setvalue(input.getString());
-	}
+//	public void setName() throws IOException {
+//		this.name.setvalue(input.getString());
+//	}
 
 	public void setJob(Job job){
 		this.job = job;
@@ -71,13 +69,21 @@ public class Character extends BChara{
 	}
 
 
-	void setName(Text name) {
-		this.name = name;
-	}
+//	public String getName(){
+//		return this.name.getvalue();
+//	}
+
+//	void setName(Text name) {
+//		this.name = name;
+//	}
+
+//	void setName(String name) {
+//		this.name.setvalue(name);
+//	}
 
 	//途中
 	void getstatus(){
-		System.out.println("Name :" + name.getvalue());
+		System.out.println("Name :" + getName());
 		System.out.println("Job  :" + job.getname().getvalue());
 		System.out.println("Level:" + lv.getValue());
 	}

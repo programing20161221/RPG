@@ -26,7 +26,7 @@ public class Fight implements Icommand{
 	public Dialog getDialog() {return dialog;}
 	public void setDialog(Dialog dialog) {this.dialog = dialog;}
 
-	public String show(){return text.showvalue();}
+	public String show(){return text.getvalue();}
 	public Dialog action(){
 		// player turn
 		System.out.println("こちらの攻撃!"+ (monster.getHp().getValue() - hero.getAttack().getValue())+"のダメージ!!を与えた!!");

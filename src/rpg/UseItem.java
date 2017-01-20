@@ -12,7 +12,7 @@ public class UseItem implements Icommand{
 	void settext(String text){ this.Choice_message.setvalue(text);}
 
 	public String show(){
-		return Choice_message.showvalue();
+		return Choice_message.getvalue();
 	}
 	public Dialog action(){
 		return null;

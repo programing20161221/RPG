@@ -11,7 +11,7 @@ public class BChara{
 	private Parameter defense;
 
 	public void setName(String text){this.name.setvalue(text);}
-	public String getName(){ return name.getValue(); }
+	public String getName(){ return name.getvalue(); }
 
 	public Parameter getMaxhp() {return maxhp;}
 	public void setMaxhp(int maxhp) {this.maxhp.setValue(maxhp);}

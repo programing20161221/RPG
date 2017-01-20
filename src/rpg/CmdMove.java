@@ -29,7 +29,7 @@ public class CmdMove implements Icommand{
 	}
 
 	public String show(){
-		return text.showvalue();
+		return text.getvalue();
 	}
 
 //	@Override

@@ -4,29 +4,18 @@ public class Text {
 	private String value;
 
 	public Text() {
-		// TODO Auto-generated constructor stub
-		value = "lizard";
+		value = "TEXTNAME";
 	}
 
 	String getvalue(){
 		return value;
 	}
 
-	String getValue(){
-		return value;
-	}
 
 	void setvalue(String value){
 		this.value = value;
 	}
 
-//	void setValue(String value){
-//		this.value = value;
-//	}
-//
-	String showvalue(){
-		return value;
-	}
 
 	String showvalue(int length){
 

@@ -11,9 +11,13 @@ public class CmdBattle implements Icommand{
 	private UseItem item;
 	private CmdMove escape;
 
-	CmdBattle(){
+	private Party party;
+
+	CmdBattle(Party p){
 		this.Choice_message = new Text();
 		this.dialog = new Dialog();
+
+		this.party = p;
 
 		settext("敵とたたかう");
 
@@ -36,25 +40,32 @@ public class CmdBattle implements Icommand{
 	Dialog getDialog(){ return this.dialog;}
 
 	public String show(){
-		return Choice_message.showvalue();
+		return Choice_message.getvalue();
 	}
 
 	public Dialog action() throws IOException{
 		while(true){
-			dialog.showmessage(); //説明文
-			dialog.show(); //コマンド一覧
 
-			System.out.println(" > ");
+			for(int i=1; i<= party.sizeParty() ;i++){
+//				Main.party.ch.get(i).getName()
+				dialog.setMessage(Main.party.ch.get(i-1).getName()+"は何をする?");
+				System.out.println("i:"+i);
+				dialog.showmessage(); //説明文
+				dialog.show(); //コマンド一覧
 
-			Scanner scan = new Scanner(System.in);
-			int key = Integer.parseInt(scan.next());
-			if(key == 3){
-				break;
+				System.out.println(" > ");
+
+				Scanner scan = new Scanner(System.in);
+				int key = Integer.parseInt(scan.next());
+				if(key == 3){
+					break;
+				}
+
+//				dialog.Caction(dialog, key);//あらかじめメンバーの行動を決めて，最後に実行
 			}
-			dialog.setMessage("つぎに何をする?");
-			dialog.Caction(dialog, key);
+
 		}
-		return null;
+//		return null;
 	}
 
 }

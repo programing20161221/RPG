@@ -9,7 +9,7 @@ public class Deviaparty implements Icommand{
 	@Override
 	public String show() {
 		// TODO Auto-generated method stub
-		name.setvalue("パーティから外れる．");
+		name.setvalue("パーティから外す");
 		return name.getvalue();
 	}
 

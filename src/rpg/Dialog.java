@@ -28,7 +28,7 @@ public class Dialog {
 	}
 
 	void showmessage() {
-		System.out.println(this.message.showvalue());
+		System.out.println(this.message.getvalue());
 	}
 
 //	Dialog input(int key) {
