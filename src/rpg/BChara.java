@@ -6,13 +6,15 @@ public class BChara{
 	private Parameter hp;
 	private Parameter mp;
 	private Parameter ap;
-
+	private Boolean live;
 	private Parameter attack;
 	private Parameter defense;
 
 	public void setName(String text){this.name.setvalue(text);}
 	public String getName(){ return name.getvalue(); }
 
+	public void setLive(Boolean l){this.live = l;}
+	public Boolean getLive(){return this.live;}
 	public int getMaxhp() {return hp.getMax();}
 	public void setMaxhp(int max) {this.hp.setMax(max);}
 	public int getMinhp() {return hp.getMin();}
@@ -39,6 +41,7 @@ public class BChara{
 		this.setHp(10);
 		setMp(10);
 		setAp(5);
+		setLive(true);
 	}
 
 	BChara(String str){
@@ -50,6 +53,7 @@ public class BChara{
 		this.setHp(20);
 		setMp(10);
 		setAp(5);
+		setLive(true);
 	}
 
 	public void initInstance(){

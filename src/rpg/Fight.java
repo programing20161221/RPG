@@ -33,9 +33,8 @@ public class Fight implements Bcommand{
 
 //		}
 //		System.out.println("fight");
-		System.out.println("こちらの攻撃!"+ c.getAttack()+"のダメージ!!を与えた!!");
+		System.out.println(c.getName()+"の攻撃！     " + c.getAttack()+"のダメージ!!を与えた!!");
 		monster.setHp(monster.getHp() - c.getAttack());
-
 		// monster turn
 //		Character ch = party.RandomMember();
 //		System.out.println("敵からの攻撃!\n"+ch.getName()+"が"+ monster.getAttack()+"のダメージを食らった!!");

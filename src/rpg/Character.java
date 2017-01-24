@@ -3,6 +3,8 @@ package rpg;
 public class Character extends BChara{
 	private Parameter lv;
 //	private Text name;
+	private Parameter EXP;	 //if EXP greater than equal lv*ratio, Character’s Level UP　and EXP is initialized to zero!
+	private Parameter EXPratio;
 	private Job job;
 	private Ability ability;
 	private Equip weapon;
@@ -33,8 +35,32 @@ public class Character extends BChara{
 		this.battledialog = new Dialog();
 		this.input = new Input();
 		this.job = new Job();
-
+		this.EXP = new Parameter();
 		lv.setrange(100, 1);
+	}
+
+	public Parameter getLv() {
+		return lv;
+	}
+
+	public void setLv(Parameter lv) {
+		this.lv = lv;
+	}
+
+	public int getEXP() {
+		return EXP.getValue();
+	}
+
+	public void setEXP(int eXP) {
+		EXP.setValue(eXP);
+	}
+
+	public Parameter getEXPratio() {
+		return EXPratio;
+	}
+
+	public void setEXPratio(Parameter eXPratio) {
+		EXPratio = eXPratio;
 	}
 
 	public void setBcommand(Bcommand i){

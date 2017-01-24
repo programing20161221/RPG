@@ -17,7 +17,7 @@ public class Main {
 		Dialog field = new Dialog();
 		Dialog tavern = new Dialog();
 
-		CmdBattle battle  = new CmdBattle(party);
+		CmdBattle battle  = new CmdBattle(party, town);
 
 		tmp = new Dialog();
 

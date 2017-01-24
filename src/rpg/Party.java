@@ -23,10 +23,23 @@ public class Party {
 		return this.ch.size();
 	}
 
+	int liveMember(){
+		int l = 0;
+		for(int i=0; i< Main.party.sizeParty() ;i++){
+			if(!(ch.get(i).getLive())) continue;
+			l++;
+		}
+		return l;
+	}
+
 	Character RandomMember(){
         Random rnd = new Random();
-        int ran = rnd.nextInt(4);
-        return ch.get(ran);
+        int ran;
+        while(true){
+        	ran = rnd.nextInt(4);
+        	if(ch.get(ran).getLive())
+        		return ch.get(ran);
+        }
 	}
 
 	Character getMember(int key){

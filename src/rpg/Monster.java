@@ -6,12 +6,12 @@ public class Monster extends BChara{
 
 	private static final boolean DEBUG = true;
 
-	public Parameter getEXP() {return EXP;}
+	public int getEXP() {return EXP.getValue();}
 	public void setEXP(int exp) {this.EXP.setValue(exp);}
 
 	Monster(){
-		setMaxhp(100);
-		setHp(100);
+		setMaxhp(10);
+		setHp(10);
 		setName("test");
 		setAttack(2);
 		setDefense(2);
@@ -20,8 +20,8 @@ public class Monster extends BChara{
 	}
 
 	Monster(String str){
-		setMaxhp(100);
-		setHp(100);
+		setMaxhp(10);
+		setHp(10);
 		setName(str);
 		setAttack(2);
 		setDefense(2);

@@ -10,7 +10,7 @@ public class Parameter {
 		// TODO Auto-generated constructor stub
 		this.text = new Text();
 		this.value = 0;
-		this.max = 10;
+		this.max = 100000000;
 		this.min = 0;
 	}
 
