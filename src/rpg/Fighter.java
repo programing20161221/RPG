@@ -6,6 +6,7 @@ public class Fighter extends Job{
 		this.mhprate = 1;
 		this.mmprate = 1;
 		this.incaprate = 1;
+		this.guard = 0.9;
 	}
 	
 }

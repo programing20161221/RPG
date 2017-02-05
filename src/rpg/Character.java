@@ -37,10 +37,11 @@ public class Character extends BChara{
 		this.job = new Job();
 		this.EXP = new Parameter();
 		lv.setrange(100, 1);
+		lv.setValue(1);
 	}
 
-	public Parameter getLv() {
-		return lv;
+	public int getLv() {
+		return lv.getValue();
 	}
 
 	public void setLv(Parameter lv) {
@@ -52,7 +53,7 @@ public class Character extends BChara{
 	}
 
 	public void setEXP(int eXP) {
-		EXP.setValue(eXP);
+		EXP.setValue(eXP + EXP.getValue());
 	}
 
 	public Parameter getEXPratio() {
@@ -87,9 +88,13 @@ public class Character extends BChara{
 	public void setJob(Job job){
 		this.job = job;
 	}
+	
+	public Job getJob(){
+		return this.job;
+	}
 
 	int mhp(){
-		return (int)((lv.getValue() + ability.getstrength()) * job.getmhptate());
+		return (int)((lv.getValue() * 10 + ability.getstrength()) * job.getmhptate());
 	}
 
 	int mmp(){
@@ -122,6 +127,7 @@ public class Character extends BChara{
 		System.out.println("Name :" + getName());
 		System.out.println("Job  :" + job.getname().getvalue());
 		System.out.println("Level:" + lv.getValue());
+		System.out.println("EXP:" + EXP.getValue());
 	}
 
 	void levelup(){
@@ -141,8 +147,19 @@ public class Character extends BChara{
 		hp.setrange(mhp(), 0);
 		mp.setrange(mmp(), 0);
 		ap.setrange(incap(), 0);
-
+		hp.setValue(mhp());
+		mp.setValue(mmp());
+		ap.setValue(incap());
+		
 		ability.setability(lv.getValue());
+	}
+	
+	int chkExp(){
+		if(this.EXP.getValue() >=  lv.getValue() * 100){
+			lv.setValue(lv.getValue()+1);
+			this.EXP.setValue(0);
+		}
+		return lv.getValue();
 	}
 
 	void showCharacter(){

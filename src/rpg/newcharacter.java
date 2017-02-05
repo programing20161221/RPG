@@ -37,7 +37,7 @@ public class newcharacter implements Icommand{
 		}else if(key == 4){
 			newchara.setJob(new Mage());
 		}
-
+		newchara.initstatus();
 		Main.ch.add(newchara);
 		return null;
 	}

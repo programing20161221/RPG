@@ -96,6 +96,12 @@ public class CmdBattle implements Icommand{
 		System.out.println("パーティは"+exp+"[EXP]を手にいれた！");
 		for(int i=0; i< party.sizeParty() ;i++){
 			Main.party.ch.get(i).setEXP(exp);
+			Main.party.ch.get(i).chkExp();
+		}
+		for(int i=0; i< party.sizeParty() ;i++){
+			if(Main.party.ch.get(i).getEXP() == 0){
+				System.out.println(Main.party.ch.get(i).getName()+"がレベル"+ Main.party.ch.get(i).getLv()+"になりました!!");
+			}
 		}
 	}
 
@@ -111,7 +117,7 @@ public class CmdBattle implements Icommand{
 		//monster
 		Character ch = party.RandomMember();
 		System.out.println("敵からの攻撃!\n"+ch.getName()+"が"+ m.getAttack()+"のダメージを食らった!!");
-		ch.setHp(ch.getHp()- m.getAttack());
+		ch.setHp(ch.getHp()- (int)(m.getAttack()*ch.getJob().getGuard()));
 		if(ch.getHp() <= 0) ch.setLive(false);
 		System.out.println(ch.getName()+": ("+ch.getHp()+"/"+ch.getMaxhp()+")\n");
 		System.out.println(m.getName()+"("+m.getHp()+"/"+m.getMaxhp()+")");

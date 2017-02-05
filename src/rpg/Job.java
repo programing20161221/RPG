@@ -5,6 +5,7 @@ public class Job {
 	double mhprate;
 	double mmprate;
 	double incaprate;
+	double guard;
 	
 	Job(){
 		this.name = new Text();
@@ -27,5 +28,9 @@ public class Job {
 	
 	double getincaprate(){
 		return incaprate;
+	}
+	
+	double getGuard(){
+		return guard;
 	}
 }

@@ -6,5 +6,6 @@ public class Mage extends Job{
 		this.mhprate = 1;
 		this.mmprate = 1.25;
 		this.incaprate = 1.1;
+		this.guard = 1.1;
 	}
 }

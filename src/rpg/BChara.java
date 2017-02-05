@@ -35,10 +35,10 @@ public class BChara{
 	BChara(){
 		initInstance();
 		this.setName("test");
-		this.setAttack(1);
-		this.setDefense(1);
-		this.setMaxhp(20);
-		this.setHp(10);
+		this.setAttack(10);
+		this.setDefense(10);
+		this.setMaxhp(100);
+		this.setHp(100);
 		setMp(10);
 		setAp(5);
 		setLive(true);
