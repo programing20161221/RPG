@@ -41,7 +41,8 @@ public class Fight implements Bcommand{
 //		ch.setHp(ch.getHp()- monster.getAttack());
 //		System.out.println(ch.getName()+": ("+ch.getHp()+"/"+ch.getMaxhp()+")\n");
 //		System.out.println(monster.getName()+"("+monster.getHp()+"/"+monster.getMaxhp()+")");
-		return dialog;
+//		return dialog;
+		return null;
 	}
 
 }

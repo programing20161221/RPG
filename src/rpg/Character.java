@@ -88,7 +88,7 @@ public class Character extends BChara{
 	public void setJob(Job job){
 		this.job = job;
 	}
-	
+
 	public Job getJob(){
 		return this.job;
 	}
@@ -150,10 +150,10 @@ public class Character extends BChara{
 		hp.setValue(mhp());
 		mp.setValue(mmp());
 		ap.setValue(incap());
-		
+
 		ability.setability(lv.getValue());
 	}
-	
+
 	int chkExp(){
 		if(this.EXP.getValue() >=  lv.getValue() * 100){
 			lv.setValue(lv.getValue()+1);

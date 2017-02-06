@@ -16,14 +16,13 @@ public class CmdBattle implements Icommand{
 	private Monster m;
 	private ArrayList<Bcommand> Blist = new ArrayList<Bcommand>();
 
+	static Dialog tmp;
 	CmdBattle(Party p, Dialog d){
 		this.Choice_message = new Text();
 		this.dialog = new Dialog();
 		this.ret = d;
 		this.m = new Monster("スライム");
 		m.setAttack(30);
-//		m.setName("スライム");
-//		m.setHp(10);
 		this.party = p;
 		this.btl = party.sizeParty();
 		settext("敵とたたかう");
@@ -33,7 +32,7 @@ public class CmdBattle implements Icommand{
 		this.item = new UseItem();
 		item.settext("アイテムを使う");
 		this.escape = new Escape();
-		escape.set("にげる", null);
+		escape.set("にげる", ret);
 
 		Blist.add(fight);
 		Blist.add(item);
@@ -56,6 +55,13 @@ public class CmdBattle implements Icommand{
 	}
 
 	public Dialog action() throws IOException{
+		//initialize
+		if(m.getHp() <= 0){
+			this.m.setHp(m.getMaxhp()*2);
+			this.m.setLive(true);
+			dialog.set(m.getName()+"("+m.getHp()+"/"+m.getMaxhp()+")"+"があらわれた!!");
+		}
+
 		dialog.showmessage();
 		System.out.println("");
 		btl =  party.liveMember()+1;
@@ -79,7 +85,11 @@ public class CmdBattle implements Icommand{
 				c.setBcommand(Blist.get(key-1));
 
 			}
-			this.exec();
+			int r = this.exec();
+			System.out.println("r"+r);
+			if(r == 3){
+				return ret;
+			}
 		}
 		if(btl <= 0){
 			System.out.println("冒険者は負けてしまった!");
@@ -111,7 +121,8 @@ public class CmdBattle implements Icommand{
 			if(party.getMember(i).getBcommand()==null){
 				continue;
 			}
-			party.getMember(i).getBcommand().action(party.getMember(i));
+			tmp = party.getMember(i).getBcommand().action(party.getMember(i));
+			if(tmp != null){return 3;}
 			if(m.getHp()<=0) m.setLive(false);
 		}
 		//monster

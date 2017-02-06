@@ -73,6 +73,9 @@ public class Dialog {
 		for (Bcommand c : cmd)
 			addcommand(c);
 	}
+	void set(String text) {
+		setMessage(text);
+	}
 
 	Dialog Caction(Dialog current, int key) throws IOException {
 		return commandI.get(key-1).action();
