@@ -86,7 +86,6 @@ public class CmdBattle implements Icommand{
 
 			}
 			int r = this.exec();
-			System.out.println("r"+r);
 			if(r == 3){
 				return ret;
 			}

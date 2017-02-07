@@ -38,7 +38,7 @@ public class BChara{
 		this.setAttack(10);
 		this.setDefense(10);
 		this.setMaxhp(100);
-		this.setHp(100);
+		this.setHp(10);
 		setMp(10);
 		setAp(5);
 		setLive(true);
